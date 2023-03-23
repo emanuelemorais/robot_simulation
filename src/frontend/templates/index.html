@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <title>Robot Simulation</title>
+</head>
+<body class='bg-gray-50	'>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <div class=''>
+        <h1 class='text-center text-5xl mt-12 font-bold'>Simulação de robô</h1>
+        <h2 class='text-center text-3xl mt-10 font-bold'>Posição atual do robô:</h2>
+        <div class="flex justify-center mt-4 text-2xl">
+            <p class='mr-2 ml-2'>X: {{x}}</p>
+            <p class='mr-2 ml-2'>Y: {{y}}</p>
+            <p class='mr-2 ml-2'>Z: {{z}}</p>
+            <p class='mr-2 ml-2'>X: {{j1}}</p>
+            <p class='mr-2 ml-2'>Y: {{j2}}</p>
+            <p class='mr-2 ml-2'>Z: {{j3}}</p>
+            <p class='mr-2 ml-2'>X: {{j4}}</p>
+        </div>
+        
+        <h2 class='text-center text-3xl mt-10 font-bold '>Enviar nova posição</h2>
+
+        
+        <form action="/move_robot" method="POST">
+            <div class='items-center flex flex-col'>
+                <input type="number" name="x" placeholder='Digite o X' required class='w-72 mt-4 h-10 rounded-sm border-gray-400 border text-center'/>
+                <input type="number" name="y" placeholder='Digite o Y' required class='w-72 mt-4 h-10 rounded-sm border-gray-400 border text-center'/>
+                <input type="number" name="z" placeholder='Digite o Z' required class='w-72 mt-4 h-10 rounded-sm border-gray-400 border text-center'/>
+                <input type="number" name="j1" placeholder='Digite o J1' required class='w-72 mt-4 h-10 rounded-sm border-gray-400 border text-center'/>
+                <input type="number" name="j2" placeholder='Digite o J2' required class='w-72 mt-4 h-10 rounded-sm border-gray-400 border text-center'/>
+                <input type="number" name="j3" placeholder='Digite o J3' required class='w-72 mt-4 h-10 rounded-sm border-gray-400 border text-center'/>
+                <input type="number" name="j4" placeholder='Digite o J4' required class='w-72 mt-4 h-10 rounded-sm border-gray-400 border text-center'/>
+            </div>
+            <div class='justify-center flex'>
+                <button type="submit" name="submit" class='bg-sky-900 text-white font-bold w-60 rounded-lg mt-4 shadow-lg	hover:bg-sky-800 hover:scale-105'>Enviar</button>
+            </div>    
+        </form> 
+        
+        <h2 class='text-center text-3xl mt-10 font-bold'>Ver simulação completa</h2>
+        <form action="/inicia_simulacao">
+            <div class='justify-center flex'>
+                <button type="submit" name="simulação" class='bg-sky-900 text-white font-bold w-60 rounded-lg mt-4 shadow-lg hover:bg-sky-800 hover:scale-105'>Simulação completa</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
