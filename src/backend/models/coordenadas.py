@@ -1,11 +1,11 @@
 from models.base import Base
-from sqlalchemy import Column, Integer, String, Boolean, Float
+from sqlalchemy import Column, Integer, Float
 
 class Coordenadas(Base): #Estrutura para criar uma tabela
      __tablename__ = "coordenadas"
      id= Column(Integer, primary_key=True, autoincrement=True)
      x= Column(Float)
-     y= Column(FLoat)
+     y= Column(Float)
      z= Column(Float)
      r=Column(Float)
 
@@ -13,5 +13,5 @@ class Coordenadas(Base): #Estrutura para criar uma tabela
         return f"Coordenada(id={self.id},x={self.x},y={self.y},z={self.z}, r={self.r})"
      
      def lista_dados(self):
-        lista = [self.x, self.y, self.z, self.j1, self.j2, self.j3, self.j4]
+        lista = [self.x, self.y, self.z, self.r]
         return lista

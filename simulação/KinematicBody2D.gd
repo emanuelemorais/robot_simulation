@@ -24,5 +24,8 @@ func _ready():
 	set_R(45)
 	set_Z(100)
 	
+	
+	
+	
 
 
