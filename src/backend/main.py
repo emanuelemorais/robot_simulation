@@ -3,7 +3,7 @@ import pydobot
 import db as db
 from models.coordenadas import Coordenadas
 
-coordenadas = Coordenadas(x=1, y=3, z=42, j1=31, j2=312, j3=312, j4=3123)
+coordenadas = Coordenadas(x=100, y=300, z=50, r=45)
 db.session.add(coordenadas)
 db.session.commit()
 print('ok')
@@ -23,13 +23,11 @@ def move_robot():
     x = request.form['x']
     y = request.form['y']
     z = request.form['z']
-    j1 = request.form['j1']
-    j2 = request.form['j2']
-    j3 = request.form['j3']
-    j4 = request.form['j4']
+    r = request.form['r']
+    
         
     db
-    coordenadas = Coordenadas(x=int(x), y=int(y), z=int(z), j1=int(j1), j2=int(j2), j3=int(j3), j4=int(j4))
+    coordenadas = Coordenadas(x=int(x), y=int(y), z=int(z), r=int(r))
     db.session.add(coordenadas)
     db.session.commit()
     print('Dados inseridos com sucesso.')
