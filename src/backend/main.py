@@ -5,14 +5,6 @@ from models.coordenadas import Coordenadas
 import json
 
 
-# coordenadas = Coordenadas(x=100, y=300, z=50, r=45)
-# db.session.add(coordenadas)
-# db.session.commit()
-# print('ok')
-
-
-
-
 app = Flask(__name__, template_folder='../frontend/templates')
 
 @app.route('/')
@@ -48,10 +40,6 @@ def move_robot():
 
     return redirect(url_for('index'))
 
-
-@app.route('/inicia_simulacao')
-def inicia_simulacao():
-    return 'Simulação iniciada'
     
 if __name__ == "__main__":
     app.run(debug=True)
