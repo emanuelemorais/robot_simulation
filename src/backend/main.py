@@ -1,11 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
-import pydobot
+from flask import Flask, render_template, request, redirect, url_for
 import db as db
 from models.coordenadas import Coordenadas
 import json
 
 
-app = Flask(__name__, template_folder='../frontend/templates')
+app = Flask(__name__, template_folder='../frontend/templates') #
 
 @app.route('/')
 def index():
@@ -31,7 +30,6 @@ def move_robot():
     z = request.form['z']
     r = request.form['r']
     
-        
     db
     coordenadas = Coordenadas(x=int(x), y=int(y), z=int(z), r=int(r))
     db.session.add(coordenadas)

@@ -38,7 +38,6 @@ func process_response(x, y, z, r):
 	set_Z(z)
 	
 func _ready():
-	$HTTPRequest.connect("request_completed", self, "on_request_completed")
 	$HTTPRequest.request('http://127.0.0.1:5000/simulation')
 
 
