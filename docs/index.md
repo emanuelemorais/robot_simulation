@@ -33,5 +33,5 @@ Imagem de como é a simulação:
 2. Instale `python` em seu computador
 3. No diretorio do projeto digite os comandos `pip install flask` e `pip install sqlalchemy`
 4. Entre no diretorio `backend` e rode o comando `python main.py`
-5. No navegador acesse http://127.0.0.1:5000/ para te acesso ao frontend
+5. No navegador acesse http://127.0.0.1:5000/
 6. Para rodar a simulação instale a engine Godot e importe o projeto dentro do diretorio 'simulação'. Ao abrir clique em play, no canto superior direito da interface do Godot
