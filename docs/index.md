@@ -1,5 +1,15 @@
 # Documentação do sistema proposto
 
+Esse projeto é um simulação de braço robôtico e é composto por 3 partes:
+
+- Frontend: O frontend é servido pelo backend e nele é posivel ver a posição atual do robô e enviar uma nova direção.
+- Backend: O backend foi feito em Flask, se comunica com o frontend através de um render template e guarda os dados em um banco SQLite com a ORM SQLAlchemy.
+- Simução: A simulação foi feita na plataforma godot em plano 2D. Nessa adaptação o braço representa os eixo x e y, já os eixos z e r são representados pelo quadrado como se fosse o alvo do braço.
+
+Imagem de como é a simulação:
+
+<img src="https://user-images.githubusercontent.com/99221221/229659374-ffb3dbf6-ee73-4ba4-9cef-0789728dd998.png" />
+
 ## Separação de pastas
 
 ```
@@ -17,13 +27,11 @@
 ├── simulação
 ```
 
-## Arquivos no diretorio src/backend
-A pasta backend possui toda a estrutura de rotas, querys e banco de dados criados. Dentro da pasta models existem arquivos referentes a criação da estrutura de banco de dados utilizando a ORM SQLAlchemy. Já arquivo banco.db é o banco de dados que será utilizado para guardar informações de localizações passadas para a simulação e db.py possui função criar a sessão de comunicação com o banco de dados.
+## Rodar o programa
 
-O arquivo main.py é onde toda a lógica do backend está sendo puxada e rodando. Dessa maneira existem três rotas existentes, sendo elas uma página inicial de GET ("/"), uma rota GET que será puxada constantemente pela simulação ("/simulation") e por fim uma rota POST para enviar novos valores para a simulação e banco de dados
-
-## Arquivos no diretorio src/frontend
-Esse diretorio possui uma subpasta chamada templates e, dentro desta o arquivo index.html que rendeniza a parte visual que interação com a simulação
-
-## Arquivos no diretorio src/backend
-Por fim, este diretório possui todda a simulaçaõ feita dentro da engine godot
+1. Clone este repositório
+2. Instale `python` em seu computador
+3. No diretorio do projeto digite os comandos `pip install flask` e `pip install sqlalchemy`
+4. Entre no diretorio `backend` e rode o comando `python main.py`
+5. No navegador acesse http://127.0.0.1:5000/ para te acesso ao frontend
+6. Para rodar a simulação instale a engine Godot e importe o projeto dentro do diretorio 'simulação'. Ao abrir clique em play, no canto superior direito da interface do Godot
